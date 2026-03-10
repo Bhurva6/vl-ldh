@@ -289,7 +289,7 @@
     overflow-x: auto;
   }
 
-  table {
+  .tableContainer table {
     min-width: 1000px;
   }
 }
