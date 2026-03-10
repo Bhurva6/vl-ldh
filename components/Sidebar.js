@@ -4,8 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import {
   Dashboard as DashboardIcon,
-  GetApp as InboundIcon,
-  PublishOutlined as OutboundIcon,
+  Input as InboundIcon,
+  Output as OutboundIcon,
   LocalShipping as TruckIcon,
   LocalOffer as SkuIcon,
   Assessment as ReportsIcon,
