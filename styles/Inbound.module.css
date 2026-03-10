@@ -315,12 +315,12 @@
     overflow-x: auto;
   }
 
-  table {
+  .tableContainer table {
     min-width: 800px;
   }
 
-  th,
-  td {
+  .tableContainer th,
+  .tableContainer td {
     padding: 8px;
     font-size: 11px;
   }
