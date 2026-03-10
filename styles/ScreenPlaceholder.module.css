@@ -175,7 +175,7 @@
   vertical-align: middle;
 }
 
-.table tr:hover {
+.table tbody tr:hover {
   background: rgba(232, 147, 26, 0.05);
 }
 
