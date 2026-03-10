@@ -86,12 +86,12 @@
   margin-bottom: 24px;
 }
 
-table {
+.tableContainer table {
   width: 100%;
   border-collapse: collapse;
 }
 
-th {
+.tableContainer th {
   background: var(--card2);
   color: var(--amber);
   font-family: var(--mono);
@@ -105,7 +105,7 @@ th {
   white-space: nowrap;
 }
 
-td {
+.tableContainer td {
   padding: 10px 12px;
   color: var(--light);
   border-bottom: 1px solid var(--border);
@@ -113,15 +113,15 @@ td {
   font-size: 12px;
 }
 
-tr:last-child td {
+.tableContainer tr:last-child td {
   border-bottom: none;
 }
 
-tr:hover {
+.tableContainer tr:hover {
   background: rgba(232, 147, 26, 0.05);
 }
 
-td strong {
+.tableContainer td strong {
   color: var(--white);
   font-family: var(--mono);
 }
