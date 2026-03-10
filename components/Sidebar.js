@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from '@/styles/Sidebar.module.css';
 
 const Sidebar = () => {
@@ -26,7 +27,13 @@ const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebarHeader}>
-        <div className={styles.logoMark}>V</div>
+        <Image 
+          src="/vigilantlabslogo.png" 
+          alt="Vigilant Labs Logo" 
+          width={48} 
+          height={48}
+          className={styles.logo}
+        />
         <div className={styles.brand}>
           VIGILANT <span>LABS</span>
         </div>
