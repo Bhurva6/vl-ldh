@@ -1,0 +1,310 @@
+.dashboard {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pageHeader {
+  margin-bottom: 24px;
+}
+
+.pageHeader h1 {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.timestamp {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+/* KPI Grid */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.kpiCard {
+  background: linear-gradient(135deg, var(--card) 0%, var(--card2) 100%);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px;
+  border-left: 3px solid var(--amber);
+  transition: all 0.2s;
+}
+
+.kpiCard:hover {
+  background: linear-gradient(135deg, var(--card2) 0%, var(--card) 100%);
+  border-left-color: #f5a623;
+  transform: translateY(-2px);
+}
+
+.kpiLabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.kpiValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--amber);
+  font-family: var(--mono);
+  margin-bottom: 8px;
+}
+
+.kpiTrend {
+  font-size: 11px;
+  color: var(--green);
+  font-family: var(--mono);
+  letter-spacing: 0.05em;
+}
+
+/* Charts Section */
+.chartsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.chartContainer {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.chartContainer h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: var(--white);
+  font-family: var(--sans);
+}
+
+/* Content Grid */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Camera Section */
+.cameraSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cameraPlaceholder {
+  background: var(--card);
+  border: 1.5px dashed var(--border);
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  text-align: center;
+}
+
+.cameraIcon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.cameraLabel {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.cameraDesc {
+  font-size: 12px;
+  color: var(--silver);
+  margin-bottom: 8px;
+}
+
+.cameraDims {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--amber);
+  letter-spacing: 0.05em;
+}
+
+/* Side Panel */
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.alertSection,
+.recentTrucksSection {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.alertSection h3,
+.recentTrucksSection h3 {
+  font-size: 13px;
+  margin-bottom: 12px;
+  color: var(--white);
+  font-family: var(--sans);
+}
+
+/* Alert List */
+.alertList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alertItem {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 11px;
+}
+
+.alertType {
+  color: var(--amber);
+  font-family: var(--mono);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.alertTruck {
+  color: var(--white);
+  font-size: 12px;
+  margin-bottom: 2px;
+  font-family: var(--mono);
+}
+
+.alertTime {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+}
+
+/* Truck List */
+.truckList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.truckItem {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+}
+
+.truckPlate {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--white);
+  flex: 1;
+}
+
+.truckStatus {
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 3px 6px;
+  border-radius: 2px;
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.truckStatus.complete {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.truckStatus.in-progress {
+  background: rgba(232, 147, 26, 0.15);
+  color: var(--amber);
+  border-color: var(--amber-dim);
+}
+
+.truckStatus.pending-review {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--blue);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.truckStatus.unloading {
+  background: rgba(232, 147, 26, 0.15);
+  color: var(--amber);
+  border-color: var(--amber-dim);
+}
+
+.truckStatus.error {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.truckTime {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .chartsSection {
+    grid-template-columns: 1fr;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 16px;
+  }
+
+  .kpiGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chartsSection {
+    grid-template-columns: 1fr;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pageHeader h1 {
+    font-size: 24px;
+  }
+}
