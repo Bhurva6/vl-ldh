@@ -12,6 +12,13 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import {
+  Warning as WarningIcon,
+  Search as SearchIcon,
+  CheckCircle as CheckIcon,
+  LocalShipping as TruckIcon,
+  Error as ErrorIcon,
+} from '@mui/icons-material';
 import styles from '@/styles/Dashboard.module.css';
 
 const Dashboard = () => {
@@ -50,11 +57,11 @@ const Dashboard = () => {
   ];
 
   const alertEvents = [
-    { id: 1, type: '⚠️ Weight Discrepancy', truck: 'MH 02 AB 1234', time: '10:45 AM' },
-    { id: 2, type: '🔍 SKU Review Needed', truck: 'GJ 05 CD 5678', time: '10:32 AM' },
-    { id: 3, type: '✅ Unloading Complete', truck: 'KA 01 EF 9012', time: '10:15 AM' },
-    { id: 4, type: '🚛 Truck Arrived', truck: 'UP 16 GH 3456', time: '10:02 AM' },
-    { id: 5, type: '❌ ERP Sync Failed', truck: 'MH 03 IJ 7890', time: '09:48 AM' },
+    { id: 1, icon: WarningIcon, type: 'Weight Discrepancy', truck: 'MH 02 AB 1234', time: '10:45 AM' },
+    { id: 2, icon: SearchIcon, type: 'SKU Review Needed', truck: 'GJ 05 CD 5678', time: '10:32 AM' },
+    { id: 3, icon: CheckIcon, type: 'Unloading Complete', truck: 'KA 01 EF 9012', time: '10:15 AM' },
+    { id: 4, icon: TruckIcon, type: 'Truck Arrived', truck: 'UP 16 GH 3456', time: '10:02 AM' },
+    { id: 5, icon: ErrorIcon, type: 'ERP Sync Failed', truck: 'MH 03 IJ 7890', time: '09:48 AM' },
   ];
 
   const recentTrucks = [
@@ -164,7 +171,7 @@ const Dashboard = () => {
             <div className={styles.cameraDims}>480×270px | Placeholder</div>
           </div>
           <div className={styles.cameraPlaceholder}>
-            <div className={styles.cameraIcon}>📸</div>
+            <div className={styles.cameraIcon}>�</div>
             <div className={styles.cameraLabel}>Unloading Bay Camera</div>
             <div className={styles.cameraDesc}>AI bag count overlay in real time</div>
             <div className={styles.cameraDims}>480×270px | Placeholder</div>
@@ -174,20 +181,26 @@ const Dashboard = () => {
         {/* Alerts and Trucks */}
         <div className={styles.sidePanel}>
           <div className={styles.alertSection}>
-            <h3>🔔 Alert Feed — Last 5 Events</h3>
+            <h3>Alert Feed — Last 5 Events</h3>
             <div className={styles.alertList}>
-              {alertEvents.map((alert) => (
-                <div key={alert.id} className={styles.alertItem}>
-                  <div className={styles.alertType}>{alert.type}</div>
-                  <div className={styles.alertTruck}>{alert.truck}</div>
-                  <div className={styles.alertTime}>{alert.time}</div>
-                </div>
-              ))}
+              {alertEvents.map((alert) => {
+                const IconComponent = alert.icon;
+                return (
+                  <div key={alert.id} className={styles.alertItem}>
+                    <IconComponent className={styles.alertIcon} />
+                    <div className={styles.alertDetails}>
+                      <div className={styles.alertType}>{alert.type}</div>
+                      <div className={styles.alertTruck}>{alert.truck}</div>
+                      <div className={styles.alertTime}>{alert.time}</div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           <div className={styles.recentTrucksSection}>
-            <h3>🚛 Recent Truck Log</h3>
+            <h3>Recent Truck Log</h3>
             <div className={styles.truckList}>
               {recentTrucks.map((truck) => (
                 <div key={truck.plate} className={styles.truckItem}>

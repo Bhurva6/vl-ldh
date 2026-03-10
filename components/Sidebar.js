@@ -2,6 +2,17 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Image from 'next/image';
+import {
+  Dashboard as DashboardIcon,
+  GetApp as InboundIcon,
+  PublishOutlined as OutboundIcon,
+  LocalShipping as TruckIcon,
+  LocalOffer as SkuIcon,
+  Assessment as ReportsIcon,
+  Notifications as AlertsIcon,
+  Sync as SyncIcon,
+  People as UsersIcon,
+} from '@mui/icons-material';
 import styles from '@/styles/Sidebar.module.css';
 
 const Sidebar = () => {
@@ -13,15 +24,15 @@ const Sidebar = () => {
   };
 
   const menuItems = [
-    { icon: '📊', label: 'Live Overview', path: '/dashboard', id: '01' },
-    { icon: '📥', label: 'Inbound Tracking', path: '/inbound', id: '02' },
-    { icon: '📤', label: 'Outbound Tracking', path: '/outbound', id: '03' },
-    { icon: '🚛', label: 'Truck & ANPR Log', path: '/trucks', id: '04' },
-    { icon: '🏷️', label: 'SKU Intelligence', path: '/sku', id: '05', badge: reviewQueueCount },
-    { icon: '📈', label: 'Reports', path: '/reports', id: '06' },
-    { icon: '🔔', label: 'Alerts', path: '/alerts', id: '07' },
-    { icon: '🔗', label: 'ERP Sync', path: '/erp-sync', id: '08' },
-    { icon: '👥', label: 'Access Management', path: '/settings/users', id: '09' },
+    { icon: DashboardIcon, label: 'Live Overview', path: '/dashboard', id: '01' },
+    { icon: InboundIcon, label: 'Inbound Tracking', path: '/inbound', id: '02' },
+    { icon: OutboundIcon, label: 'Outbound Tracking', path: '/outbound', id: '03' },
+    { icon: TruckIcon, label: 'Truck & ANPR Log', path: '/trucks', id: '04' },
+    { icon: SkuIcon, label: 'SKU Intelligence', path: '/sku', id: '05', badge: reviewQueueCount },
+    { icon: ReportsIcon, label: 'Reports', path: '/reports', id: '06' },
+    { icon: AlertsIcon, label: 'Alerts', path: '/alerts', id: '07' },
+    { icon: SyncIcon, label: 'ERP Sync', path: '/erp-sync', id: '08' },
+    { icon: UsersIcon, label: 'Access Management', path: '/settings/users', id: '09' },
   ];
 
   return (
@@ -40,15 +51,18 @@ const Sidebar = () => {
       </div>
 
       <nav className={styles.navMenu}>
-        {menuItems.map((item) => (
-          <Link key={item.path} href={item.path} className={`${styles.navItem} ${isActive(item.path)}`}>
-            <span className={styles.icon}>{item.icon}</span>
-            <span className={styles.label}>{item.label}</span>
-            {item.badge && (
-              <span className={styles.badge}>{item.badge}</span>
-            )}
-          </Link>
-        ))}
+        {menuItems.map((item) => {
+          const IconComponent = item.icon;
+          return (
+            <Link key={item.path} href={item.path} className={`${styles.navItem} ${isActive(item.path)}`}>
+              <IconComponent className={styles.icon} />
+              <span className={styles.label}>{item.label}</span>
+              {item.badge ? (
+                <span className={styles.badge}>{item.badge}</span>
+              ) : null}
+            </Link>
+          );
+        })}
       </nav>
 
       <div className={styles.sidebarFooter}>
